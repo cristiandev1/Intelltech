@@ -1,22 +1,37 @@
-﻿using Intelltech.Interfaces;
+﻿using Intelltech.Data;
+using Intelltech.Interfaces;
 using Intelltech.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Intelltech.Repositories
 {
     public class GeometricShapesRepository : IGeometricShapesRepository
     {
-        public Task<GeometricShapes> create(GeometricShapes objGeometric)
+        private readonly DataContext _db;
+
+        public GeometricShapesRepository(DataContext db) {
+            _db = db;
+        }
+        public async Task<GeometricShapes> create(GeometricShapes geometric)
         {
-            throw new NotImplementedException();
+
+            try {
+
+                _db.GeometricShapes.Add(geometric);
+                _db.SaveChanges();
+
+                return geometric;
+            } catch (Exception ex) {
+                return null;
+            }
         }
 
-        public Task<List<GeometricShapes>> getAll()
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<List<GeometricShapes>> getAll() => await _db.GeometricShapes.ToListAsync();
     }
 }

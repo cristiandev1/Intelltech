@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Intelltech.Interfaces
 {
-    interface IGeometricShapesRepository
+    public interface IGeometricShapesRepository
     {
         Task<List<GeometricShapes>> getAll();
 

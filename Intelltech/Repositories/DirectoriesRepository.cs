@@ -32,16 +32,6 @@ namespace Intelltech.Repositories
             }
         }
 
-        public async Task<List<Directories>> getAll()
-        {
-            try
-            {
-                List<Directories> result = await _db.Directories.ToListAsync();
-                return result;
-            }
-            catch (Exception ex) {
-                return null;
-            }
-        }
+        public async Task<List<Directories>> getAll() => await _db.Directories.ToListAsync();
     }
 }

@@ -22,19 +22,11 @@ namespace Intelltech.Controllers
         [HttpPost]
         [Route("")]
         public async Task<Models.Directories> create(
-            [FromBody] Models.Directories data)
-        {
-            
-            var result = await _repository.create(data);
-            return result;
-            
-        }
+            [FromBody] Models.Directories data) => await _repository.create(data);
 
         [HttpGet]
         [Route("")]
-        public async Task<List<Models.Directories>> getAll() {
-            return await _repository.getAll();
-        }
+        public async Task<List<Models.Directories>> getAll() => await _repository.getAll();
 
     }
 }
