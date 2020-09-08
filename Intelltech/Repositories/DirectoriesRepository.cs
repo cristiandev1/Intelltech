@@ -1,5 +1,9 @@
-﻿using Intelltech.Interfaces;
+﻿using Intelltech.Data;
+using Intelltech.Interfaces;
 using Intelltech.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Org.BouncyCastle.Asn1.Cmp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +13,35 @@ namespace Intelltech.Repositories
 {
     public class DirectoriesRepository : IDirectoriesRepository
     {
-        public Task<Directories> create(Directories objDirectory)
+        private readonly DataContext _db;
+
+        public DirectoriesRepository(DataContext db) {
+            _db = db;
+        }
+        
+        public async Task<Directories> create(Directories directory)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _db.Directories.Add(directory);
+                _db.SaveChanges();
+                return directory;
+            }
+            catch (Exception ex) {
+                return null;
+            }
         }
 
-        public Task<List<Directories>> getAll()
+        public async Task<List<Directories>> getAll()
         {
-            throw new NotImplementedException();
+            try
+            {
+                List<Directories> result = await _db.Directories.ToListAsync();
+                return result;
+            }
+            catch (Exception ex) {
+                return null;
+            }
         }
     }
 }

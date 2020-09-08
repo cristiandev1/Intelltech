@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Intelltech.Data;
+using Intelltech.Interfaces;
+using Intelltech.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -29,6 +31,8 @@ namespace Intelltech
             string connection = "Server=localhost;DataBase=ProjetoTeste;Uid=root;Pwd=";
             services.AddDbContext<DataContext>(options => options.UseMySQL(connection));
             services.AddScoped<DataContext, DataContext>();
+            services.AddTransient<IDirectoriesRepository, DirectoriesRepository>();
+            services.AddTransient<IGeometricShapesRepository, GeometricShapesRepository>();
             services.AddControllers();
         }
 
