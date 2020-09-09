@@ -48,8 +48,12 @@ C:\Users\Cristian\Desktop\VisualStudioCodeProjects\Intelltech\Intelltech\bin\Deb
 C:\Users\Cristian\Desktop\VisualStudioCodeProjects\Intelltech\Intelltech\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Cristian\Desktop\VisualStudioCodeProjects\Intelltech\Intelltech\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
 C:\Users\Cristian\Desktop\VisualStudioCodeProjects\Intelltech\Intelltech\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Cristian\Desktop\VisualStudioCodeProjects\Intelltech\Intelltech\obj\Debug\netcoreapp3.1\Intelltech.csproj.CoreCompileInputs.cache
-C:\Users\Cristian\Desktop\VisualStudioCodeProjects\Intelltech\Intelltech\obj\Debug\netcoreapp3.1\Intelltech.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Cristian\Desktop\VisualStudioCodeProjects\Intelltech\Intelltech\obj\Debug\netcoreapp3.1\Intelltech.dll
 C:\Users\Cristian\Desktop\VisualStudioCodeProjects\Intelltech\Intelltech\obj\Debug\netcoreapp3.1\Intelltech.pdb
 C:\Users\Cristian\Desktop\VisualStudioCodeProjects\Intelltech\Intelltech\obj\Debug\netcoreapp3.1\Intelltech.genruntimeconfig.cache
+C:\Users\Cristian\Desktop\VisualStudioCodeProjects\Intelltech\Intelltech\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Cristian\Desktop\VisualStudioCodeProjects\Intelltech\Intelltech\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Cristian\Desktop\VisualStudioCodeProjects\Intelltech\Intelltech\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Cristian\Desktop\VisualStudioCodeProjects\Intelltech\Intelltech\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Cristian\Desktop\VisualStudioCodeProjects\Intelltech\Intelltech\obj\Debug\netcoreapp3.1\Intelltech.csproj.CoreCompileInputs.cache
+C:\Users\Cristian\Desktop\VisualStudioCodeProjects\Intelltech\Intelltech\obj\Debug\netcoreapp3.1\Intelltech.MvcApplicationPartsAssemblyInfo.cache

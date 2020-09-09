@@ -11,5 +11,6 @@ namespace Intelltech.Interfaces
         Task<List<GeometricShapes>> getAll();
 
         Task<GeometricShapes> create(GeometricShapes objGeometric);
+      
     }
 }

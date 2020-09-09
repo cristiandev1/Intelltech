@@ -1,5 +1,7 @@
 ﻿using Intelltech.Interfaces;
+using Intelltech.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,11 +25,20 @@ namespace Intelltech.Controllers
             [FromBody]Models.GeometricShapes data) 
         {
             Models.GeometricShapes result = await _repositoryGeometrics.create(data);
-            return result;
+            if (result == null)
+            {
+                Console.WriteLine("Diretorio nao encontrado..");
+                return null;
+            }
+            else {
+                return result;
+            }
+
         }
 
         [HttpGet]
         [Route("")]
         public async Task<List<Models.GeometricShapes>> getAll() => await _repositoryGeometrics.getAll();
+       
     }
 }

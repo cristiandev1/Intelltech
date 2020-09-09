@@ -9,7 +9,7 @@ namespace Intelltech.Models
     public class Directories
     {
         public Guid Id { get; set; }
-        [Required(ErrorMessage = "Este campo é requerido")]
+        [Required(ErrorMessage = "O campo nome é requerido")]
         public string Name { get; set; }
     }
 }
