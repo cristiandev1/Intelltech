@@ -2,6 +2,7 @@
 using Intelltech.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,21 +15,25 @@ namespace Intelltech.Controllers
     public class GeometricShapes : ControllerBase
     {
         private readonly IGeometricShapesRepository _repositoryGeometrics;
+        private readonly ErrorDetails _error;
 
-        public GeometricShapes(IGeometricShapesRepository repo) {
+
+        public GeometricShapes(IGeometricShapesRepository repo, ErrorDetails erro) {
+            _error = erro;
             _repositoryGeometrics = repo;
         }
 
         [HttpPost]
         [Route("")]
-        public async Task<Models.GeometricShapes> create(
+        public async Task<dynamic> create(
             [FromBody]Models.GeometricShapes data) 
         {
             Models.GeometricShapes result = await _repositoryGeometrics.create(data);
             if (result == null)
             {
-                Console.WriteLine("Diretorio nao encontrado..");
-                return null;
+                _error.Message = "Diretório não encontrado";
+                _error.StatusCode = 400;
+                return _error;
             }
             else {
                 return result;
